@@ -1,18 +1,21 @@
 public abstract class Payment {
+    protected double amount;
     protected boolean isPaidOff;
     protected Item item;
 
-    public abstract int pay();
-
-    public Payment(){
+    public Payment(double amount) {
+        this.amount = amount;
         this.isPaidOff = false;
         this.item = null;
     }
 
-    public Payment(Item item){
+    public Payment(Item item) {
         this.isPaidOff = false;
         this.item = item;
     }
+
+    public abstract int pay();
+    public abstract void processPayment();
 
     public boolean isPaidOff() {
         return isPaidOff;
@@ -22,22 +25,25 @@ public abstract class Payment {
         return item;
     }
 
-    public String getItemName(){
+    public String getItemName() {
         return item.getName();
     }
 
-    public String getStatus(){
-        if (isPaidOff){
+    public String getStatus() {
+        if (isPaidOff) {
             return "Paid";
         }
         return "ON PROGRESS";
     }
-    public int getRemainingAmount(){
-        if (isPaidOff){
+
+    public int getRemainingAmount() {
+        if (isPaidOff) {
             return 0;
         }
         return item.getPrice();
     }
+
+    public double getAmount() {
+        return amount;
+    }
 }
-
-

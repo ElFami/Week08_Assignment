@@ -10,6 +10,10 @@ public class CreditCardPayment extends Payment {
     public void processPayment() {
         System.out.println("Processing credit card payment of $" + amount + " for card number " + cardNumber);
     }
+
+    @Override
+    public int pay() {
+        isPaidOff = true;
+        return 0;
+    }
 }
-
-

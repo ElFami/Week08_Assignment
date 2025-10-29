@@ -1,4 +1,4 @@
-public class BankTransferPayment extends Payment {
+public abstract class BankTransferPayment extends Payment {
 
     private String bankAccount;
 

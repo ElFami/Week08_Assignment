@@ -1,4 +1,4 @@
-public class Cash extends Payment{
+public abstract class Cash extends Payment{
     public Cash(Item item){
         super(item);
     }
